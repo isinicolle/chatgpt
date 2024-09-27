@@ -69,7 +69,7 @@ Navega al directorio del proyecto:
 3. Instala las dependencias necesarias:
 pip install openai python-dotenv
 4. Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
-OPENAI_API_KEY=tu_clave_api
+OPENAI_API_KEY=tu_clave_api (https://platform.openai.com/api-keys) [Sacala de aqui]
 5. Para ejecutar el asistente virtual, utiliza el siguiente comando:
 
 
