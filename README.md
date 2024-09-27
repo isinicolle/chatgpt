@@ -64,25 +64,17 @@ Este proyecto es un asistente virtual simple que utiliza la API de OpenAI para r
    git clone https://github.com/isinicolle/chatgpt.git
 Navega al directorio del proyecto:
 
-bash
-Copiar código
-cd chatgpt
-Instala las dependencias necesarias:
 
-bash
-Copiar código
+2. cd chatgpt
+3. Instala las dependencias necesarias:
 pip install openai python-dotenv
-Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
-
-makefile
-Copiar código
+4. Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
 OPENAI_API_KEY=tu_clave_api
-Uso
-Para ejecutar el asistente virtual, utiliza el siguiente comando:
+5. Para ejecutar el asistente virtual, utiliza el siguiente comando:
 
 
-Contribuciones
+## Contribuciones
 Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor abre un issue o envía un pull request.
 
-Licencia
+## Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles
