@@ -1,7 +1,12 @@
 import openai
+import os
+from dotenv import load_dotenv
 
-# Configura tu clave de API aquí
-openai.api_key = 'TU_CLAVE_DE_API_AQUI'
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
+# Obtener la clave de API de la variable de entorno
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def obtener_respuesta(pregunta):
     respuesta = openai.ChatCompletion.create(
@@ -10,7 +15,7 @@ def obtener_respuesta(pregunta):
             {"role": "user", "content": pregunta}
         ]
     )
-    return respuesta['choices'][0]['message']['content']
+    return respuesta.choices[0].message['content']
 
 if __name__ == "__main__":
     while True:
