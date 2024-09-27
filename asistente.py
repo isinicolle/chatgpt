@@ -9,13 +9,17 @@ load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def obtener_respuesta(pregunta):
-    respuesta = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": pregunta}
-        ]
-    )
-    return respuesta.choices[0].message['content']
+    try:
+        respuesta = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": pregunta}
+            ]
+        )
+        return respuesta['choices'][0]['message']['content']
+    except Exception as e:
+        print("Error:", e)
+        return None
 
 if __name__ == "__main__":
     while True:
@@ -23,4 +27,7 @@ if __name__ == "__main__":
         if pregunta.lower() == 'salir':
             break
         respuesta = obtener_respuesta(pregunta)
-        print("Asistente:", respuesta)
+        if respuesta:  # Verifica si se obtuvo una respuesta
+            print("Asistente:", respuesta)
+        else:
+            print("No se pudo obtener una respuesta.")
